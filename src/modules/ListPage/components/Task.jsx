@@ -6,7 +6,7 @@ const Task = props => {
             text,
             checked,
             checkTask,
-            deleteTask} = props;
+            deleteTask } = props;
     
     return (
             (checked) ?

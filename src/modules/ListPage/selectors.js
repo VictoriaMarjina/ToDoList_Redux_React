@@ -1,0 +1,1 @@
+export const getlist = state => state.listManager.list;

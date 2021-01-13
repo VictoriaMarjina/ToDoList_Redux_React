@@ -1,14 +1,16 @@
 import './listPageStyles.css';
 import Task from './components/Task';
-import constants from '../../constants/index';
-import React, { useState, useReducer } from 'react';
-import listReducer, { initialState } from "../../manager/listManager/reducer";
+import React, { useState } from 'react';
 
-const List = () => {
-    const [task, saveText] = useState('');
+const List = props => {
     const [id, createId] = useState(0);
+    const [task, saveText] = useState('');
     const [inputValue, changeInput] = useState('');
-    const [state, dispatch] = useReducer(listReducer, initialState);
+    
+    const { list,
+            setTask,
+            checkTask,
+            deleteTask } = props;
 
     const  saveTask = event => {
         saveText(event.target.value);
@@ -19,19 +21,11 @@ const List = () => {
     const addTask = () => {
         createId(id + 1);
         (task.length !== 0) ? 
-        dispatch({ type: constants.SET_TASK, payload: {task, id} }) : 
+        setTask({ task, id }) : 
         alert('enter some text');
 
         changeInput('');
         saveText('');
-    }
-
-    const deleteTask = id => {
-        dispatch({ type: constants.DELETE_TASK, payload: id }) 
-    }
-
-    const checkTask = id => {
-        dispatch({ type: constants.CHECK_TASK, payload: id }) 
     }
 
     return ( 
@@ -45,14 +39,14 @@ const List = () => {
                         value={inputValue} 
                         placeholder={'Enter text..'} 
                         onChange={event => saveTask(event)}/>
-                    <button className={'list-header__button'} 
+                    <span className={'list-header__button'} 
                         children={'Add'}
                         onClick={() => addTask()}>
-                    </button>
+                    </span>
                 </div>
                 <div className={'tasks-container'}>
                         { 
-                            state.list.map((task, index) => (
+                            list.map((task, index) => (
                                 <Task id={task.id}
                                       key={index}
                                       text={task.task}

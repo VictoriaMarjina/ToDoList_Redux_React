@@ -1,4 +1,4 @@
-import List from './modules/ListPage/listPage';
+import List from './modules/ListPage/index';
 
 function App(){
   return (
