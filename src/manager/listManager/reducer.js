@@ -1,7 +1,7 @@
 import constants from '../../constants';
 
 export const initialState = {
-        list: [{ task: 'a', id: 'id', checked: false}],
+        list: [{ task: 'проверка', id: 'id', checked: false}],
 }
 
 const listReducer = (state = initialState, action) => {

@@ -31,7 +31,6 @@ const List = () => {
     }
 
     const checkTask = id => {
-        console.log(id);
         dispatch({ type: constants.CHECK_TASK, payload: id }) 
     }
 
@@ -54,11 +53,11 @@ const List = () => {
                 <div className={'tasks-container'}>
                         { 
                             state.list.map((task, index) => (
-                                <Task key={index}
-                                      id={task.id}
+                                <Task id={task.id}
+                                      key={index}
                                       text={task.task}
-                                      checkTask={checkTask}
                                       checked={task.checked}
+                                      checkTask={checkTask}
                                       deleteTask={deleteTask}/>
                             ))
                         }
