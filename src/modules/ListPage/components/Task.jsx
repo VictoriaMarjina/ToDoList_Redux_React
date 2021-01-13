@@ -10,24 +10,20 @@ const Task = props => {
     
     return (
             (checked) ?
-            <div className={'list__task checked'}
-                
-                    onClick={() => checkTask(id)}>
-                    {text}
-           
+            <div className={'list__task checked'} 
+                    onClick={() => checkTask(id)}
+                    children={text}>
                 <span className={'list_delete-button'} 
-                    onClick={() => deleteTask(id)}>
-                    x
+                    onClick={() => deleteTask(id)}
+                    children={'x'}>
                 </span>
             </div> :
-            <div className={'list__task'}
-                
-                    onClick={() => checkTask(id)}>
-                    {text}
-                
+                <div className={'list__task checked'} 
+                    onClick={() => checkTask(id)}
+                    children={text}>
                 <span className={'list_delete-button'} 
-                    onClick={() => deleteTask(id)}>
-                    x
+                    onClick={() => deleteTask(id)}
+                    children={'x'}>
                 </span>
             </div>
     );
