@@ -1,14 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Potta+One&display=swap');
 
 .list__header{
-    background-color: green;
+    background-color: gray;
     padding: 30px 40px;
     color: white;
     text-align: center;
 }
 
 .list-header__name {
-    font-family: 'Potta One', cursive;
+    color: #ffe140;
 }
 
 .list-header__input {
@@ -25,7 +25,8 @@
     padding: 10px;
     width: 17%;
     background: #d9d9d9;
-    color: green;
+    color: #ffe140;
+    font-weight: bolder;
     float: left;
     text-align: center;
     font-size: 15px;
@@ -52,6 +53,9 @@
   .tasks-container{
       display: flex;
       flex-direction: column;
+      height: 750px;
+      background-image: url('../../imges/kofe-zima-bloknot-chashka-ochki-ruchka.jpg');
+      background-size: 100%;
   }
 
   .list {

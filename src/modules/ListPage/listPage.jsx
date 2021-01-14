@@ -13,9 +13,9 @@ const List = props => {
             deleteTask } = props;
 
     const  saveTask = event => {
+        event.preventDefault();
         saveText(event.target.value);
         changeInput(event.target.value);
-        event.preventDefault();
     }
 
     const addTask = () => {
